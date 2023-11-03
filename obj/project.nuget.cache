@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oqdMPuw+EChC3rX3UMpAVAznSMTZAEYJ/Fv5E0fEG0pb3jdFS14elM7Dq/vGD8sLh0+NnXpZjvuyvsSwpIZxRA==",
+  "dgSpecHash": "MreH0s6YyYduu2CCqMysPsQfhII8zJSn6KUzibhk0NVPlgxPbz9mJiMj3TuGhFzxUtnZm3HJTtp5dB9RxdRIWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Diana Kelly\\Desktop\\sudoku\\sudoku.csproj",
+  "projectFilePath": "C:\\Users\\mgrad\\Desktop\\c#\\sudoku\\sudoku.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

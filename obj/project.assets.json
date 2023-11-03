@@ -8,24 +8,26 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Diana Kelly\\.nuget\\packages\\": {}
+    "C:\\Users\\mgrad\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Diana Kelly\\Desktop\\sudoku\\sudoku.csproj",
+      "projectUniqueName": "C:\\Users\\mgrad\\Desktop\\c#\\sudoku\\sudoku.csproj",
       "projectName": "sudoku",
-      "projectPath": "C:\\Users\\Diana Kelly\\Desktop\\sudoku\\sudoku.csproj",
-      "packagesPath": "C:\\Users\\Diana Kelly\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Diana Kelly\\Desktop\\sudoku\\obj\\",
+      "projectPath": "C:\\Users\\mgrad\\Desktop\\c#\\sudoku\\sudoku.csproj",
+      "packagesPath": "C:\\Users\\mgrad\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mgrad\\Desktop\\c#\\sudoku\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Diana Kelly\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\mgrad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -59,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
