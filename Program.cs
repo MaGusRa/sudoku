@@ -1,6 +1,4 @@
 ﻿using System.Data;
-using System.Reflection.Metadata.Ecma335;
-using System.Xml.XPath;
 
 static int[,] InitGameBoard()
 {
@@ -12,25 +10,14 @@ static int[,] InitGameBoard()
     return board;
 }
 
-// step through each space and fill it with a valid value
-static int[,] GenerateGameBoard(int[,] board)
+// Generates a *more* random Board than Solve() can generate by itself
+// Shuffles the first row using ShuffledRow() to make it *more* random
+static int[,] GenerateSolvedBoard()
 {
-    Random rand = new Random();
-    int[] numPool = ShuffledRow();
-    for (int i = 0; i < 81; i++)
-    {
-        int currentRow = (int)Math.Floor((double)i / 9);
-        int currentCol = i % 9;
-        //Console.WriteLine("Current Row: {0} Col: {1}", currentRow, currentCol);
-        if (board[currentRow, currentCol] == 0)
-        {
-            int temp = rand.Next(1, 9);
-            // while (!ValidateSpace(board, currentRow, currentCol, temp))
-            while (!ValidateSpace(board, currentCol, currentRow, temp)) temp = rand.Next(1, 9);
-            board[currentRow, currentCol] = temp;
-        }
-
-    }
+    int[,] board = InitGameBoard();
+    int[] seedRow = ShuffledRow();
+    for (int i = 0; i < 9; i++) board[0, i] = seedRow[i];
+    Solve(board);
     return board;
 }
 
@@ -52,56 +39,6 @@ static bool Solve(int[,] board, int row = 0, int col = 0)
         }
         return false;
     }
-}
-
-// Deprecated I don't think I need this one anymore
-// static bool ValidRowHelper(int[,] board, int row)
-// {
-//     HashSet<int> seen = new HashSet<int>();
-//     for (int i = 0; i < 9; i++)
-//     {
-//         seen.Clear();
-//         int current = board[row, i];
-//         if (seen.Add(current)) seen.Add(current);
-//         else return false;
-//     }
-//     return true;
-// }
-
-// Deprecated I don't think I need this one anymore
-// static bool ValidColHelper(int[,] board, int col)
-// {
-//     HashSet<int> seen = new HashSet<int>();
-//     for (int i = 0; i < 9; i++)
-//     {
-//         seen.Clear();
-//         int current = board[i, col];
-//         if (seen.Add(current)) seen.Add(current);
-//         else return false;
-//     }
-//     return true;
-// }
-
-// static bool ValidSquareHelper(int[,] board, int row, int col)
-// {
-//     HashSet<int> seen = new HashSet<int>();
-
-//     return false;
-// }
-
-// might not need this one either, but I will wait to remove it until I get something working
-static bool ValidateGrid(int[,] board)
-{
-    bool result = true;
-    for (int i = 0; i < 9; i++)
-    {
-        for (int j = 0; j < 9; j++)
-        {
-            int num = board[i, j];
-            result = ValidateSpace(board, i, j, num);
-        }
-    }
-    return result;
 }
 
 static bool ValidateSpace(int[,] board, int row, int col, int num)
@@ -155,10 +92,22 @@ static void PrintBoard(int[,] board)
         Console.WriteLine();
     }
 }
-int[,] testBoard = InitGameBoard();
-//PrintBoard(testBoard);
-if (Solve(testBoard))
-{
-    PrintBoard(testBoard);
-}
-//Console.WriteLine(ValidateGrid(testBoard));
+Console.WriteLine("Generated Board:");
+Console.WriteLine();
+int[,] testBoard = GenerateSolvedBoard();
+PrintBoard(testBoard);
+
+Console.WriteLine("Can it solve a hard board??");
+Console.WriteLine();
+int[,] hardBoard = {{9, 0, 0, 0, 2, 7, 0, 5, 0},
+                    {0, 5, 0, 0, 0, 0, 9, 0, 4},
+                    {0, 0, 0, 0, 0, 0, 0, 0, 0},
+                    {8, 0, 0, 0, 7, 5, 6, 4, 9},
+                    {1, 0, 0, 0, 4, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 9, 8, 0, 0},
+                    {0, 0, 0, 4, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 3, 0, 0, 1, 0},
+                    {5, 0, 1, 0, 0, 2, 0, 3, 7}
+                    };
+Solve(hardBoard);
+PrintBoard(hardBoard);
