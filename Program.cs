@@ -1,5 +1,6 @@
 ﻿using System.Data;
 
+//initialize an empty board
 static int[,] InitGameBoard()
 {
     int[,] board = new int[9, 9];
@@ -21,6 +22,7 @@ static int[,] GenerateSolvedBoard()
     return board;
 }
 
+// solves the board
 static bool Solve(int[,] board, int row = 0, int col = 0)
 {
     if (row == 9) return true;
@@ -41,6 +43,7 @@ static bool Solve(int[,] board, int row = 0, int col = 0)
     }
 }
 
+// Validates the space for a number
 static bool ValidateSpace(int[,] board, int row, int col, int num)
 {
     bool not_in_row = true;
@@ -67,6 +70,21 @@ static bool ValidateSpace(int[,] board, int row, int col, int num)
     return not_in_row && not_in_col && not_in_box;
 }
 
+static int[,] FillHard() {
+    Random rand = new Random();
+    int[,] board = InitGameBoard();
+    int missCount = 0;
+    for(int i = 0; i < 25; i++) {
+        int row = rand.Next(0,9);
+        int col = rand.Next(0,9);
+        int num = rand.Next(1,10);
+        if (ValidateSpace(board,row,col,num)) board[row,col] = num;
+        else missCount++;
+    }
+    Console.WriteLine("Valid Misses: " + missCount);
+    return board;
+}
+
 // This is pretty but idk if I need it. Creates a randomly shuffled row with LINQ
 // Might be helpful for seeding the board? idk yet though
 static int[] ShuffledRow()
@@ -80,6 +98,7 @@ static int[] ShuffledRow()
     return row;
 }
 
+// Prints out the board in a readable format
 static void PrintBoard(int[,] board)
 {
     for (int i = 0; i < 9; i++)
@@ -92,22 +111,41 @@ static void PrintBoard(int[,] board)
         Console.WriteLine();
     }
 }
-Console.WriteLine("Generated Board:");
-Console.WriteLine();
-int[,] testBoard = GenerateSolvedBoard();
-PrintBoard(testBoard);
 
-Console.WriteLine("Can it solve a hard board??");
-Console.WriteLine();
-int[,] hardBoard = {{9, 0, 0, 0, 2, 7, 0, 5, 0},
-                    {0, 5, 0, 0, 0, 0, 9, 0, 4},
-                    {0, 0, 0, 0, 0, 0, 0, 0, 0},
-                    {8, 0, 0, 0, 7, 5, 6, 4, 9},
-                    {1, 0, 0, 0, 4, 0, 0, 0, 0},
-                    {0, 0, 0, 0, 0, 9, 8, 0, 0},
-                    {0, 0, 0, 4, 0, 0, 0, 0, 0},
-                    {0, 0, 0, 0, 3, 0, 0, 1, 0},
-                    {5, 0, 1, 0, 0, 2, 0, 3, 7}
-                    };
-Solve(hardBoard);
+int[,] hardBoard = FillHard();
+Console.WriteLine("Hardboard: ");
 PrintBoard(hardBoard);
+if (Solve(hardBoard)) {
+    Console.WriteLine("Solved: ");
+    PrintBoard(hardBoard);
+}
+else Console.WriteLine("Not Valid");
+
+// Console.WriteLine("Unsolved:");
+// PrintBoard(board);
+// Console.WriteLine();
+
+// Console.WriteLine("Solved:");
+// if (Solve(board)) PrintBoard(board);
+// else Console.WriteLine("Not Valid");
+
+
+// Console.WriteLine("Generated Board:");
+// Console.WriteLine();
+// int[,] testBoard = GenerateSolvedBoard();
+// PrintBoard(testBoard);
+
+// Console.WriteLine("Can it solve a hard board??");
+// Console.WriteLine();
+// int[,] hardBoard = {{9, 0, 0, 0, 2, 7, 0, 5, 0},
+//                     {0, 5, 0, 0, 0, 0, 9, 0, 4},
+//                     {0, 0, 0, 0, 0, 0, 0, 0, 0},
+//                     {8, 0, 0, 0, 7, 5, 6, 4, 9},
+//                     {1, 0, 0, 0, 4, 0, 0, 0, 0},
+//                     {0, 0, 0, 0, 0, 9, 8, 0, 0},
+//                     {0, 0, 0, 4, 0, 0, 0, 0, 0},
+//                     {0, 0, 0, 0, 3, 0, 0, 1, 0},
+//                     {5, 0, 1, 0, 0, 2, 0, 3, 7}
+//                     };
+// Solve(hardBoard);
+// PrintBoard(hardBoard);
