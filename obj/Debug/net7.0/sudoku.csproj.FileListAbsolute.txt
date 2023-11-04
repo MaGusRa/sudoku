@@ -12,3 +12,17 @@ C:\Users\Diana Kelly\Desktop\sudoku\obj\Debug\net7.0\refint\sudoku.dll
 C:\Users\Diana Kelly\Desktop\sudoku\obj\Debug\net7.0\sudoku.pdb
 C:\Users\Diana Kelly\Desktop\sudoku\obj\Debug\net7.0\sudoku.genruntimeconfig.cache
 C:\Users\Diana Kelly\Desktop\sudoku\obj\Debug\net7.0\ref\sudoku.dll
+C:\Users\mgrad\Desktop\c#\sudoku\bin\Debug\net7.0\sudoku.exe
+C:\Users\mgrad\Desktop\c#\sudoku\bin\Debug\net7.0\sudoku.deps.json
+C:\Users\mgrad\Desktop\c#\sudoku\bin\Debug\net7.0\sudoku.runtimeconfig.json
+C:\Users\mgrad\Desktop\c#\sudoku\bin\Debug\net7.0\sudoku.dll
+C:\Users\mgrad\Desktop\c#\sudoku\bin\Debug\net7.0\sudoku.pdb
+C:\Users\mgrad\Desktop\c#\sudoku\obj\Debug\net7.0\sudoku.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mgrad\Desktop\c#\sudoku\obj\Debug\net7.0\sudoku.AssemblyInfoInputs.cache
+C:\Users\mgrad\Desktop\c#\sudoku\obj\Debug\net7.0\sudoku.AssemblyInfo.cs
+C:\Users\mgrad\Desktop\c#\sudoku\obj\Debug\net7.0\sudoku.csproj.CoreCompileInputs.cache
+C:\Users\mgrad\Desktop\c#\sudoku\obj\Debug\net7.0\sudoku.dll
+C:\Users\mgrad\Desktop\c#\sudoku\obj\Debug\net7.0\refint\sudoku.dll
+C:\Users\mgrad\Desktop\c#\sudoku\obj\Debug\net7.0\sudoku.pdb
+C:\Users\mgrad\Desktop\c#\sudoku\obj\Debug\net7.0\sudoku.genruntimeconfig.cache
+C:\Users\mgrad\Desktop\c#\sudoku\obj\Debug\net7.0\ref\sudoku.dll
